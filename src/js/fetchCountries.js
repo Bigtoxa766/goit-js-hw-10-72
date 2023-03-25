@@ -13,4 +13,3 @@ export const fetchCountries = name =>
     .catch(error => 
     error
   ) 
-
