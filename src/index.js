@@ -8,7 +8,7 @@ const countryInfoWrapperEl = countryListEl.nextElementSibling;
 const DEBOUNCE_DELAY = 300;
 
 function markup() {
-  return `<li class="country-list-item">${this.name}<li/>`
+  return `<li class="country-list-item">${inputEl.value}<li/>`
 }
 
 const heandleSearchCountry = event => {
@@ -17,10 +17,10 @@ const heandleSearchCountry = event => {
   const searchQuery = event.target.value.trim();
 
   fetchCountries(searchQuery).then(data => {
-    countryListEl.innerHTML = markup(data).join('');
+    countryListEl.innerHTML = markup(data);
   })
 }
 
-inputEl.addEventListener('input', heandleSearchCountry)
+inputEl.addEventListener('input', handleInput)
 
 
